@@ -1,0 +1,49 @@
+---
+import ReactCounter from '../components/ReactCounter.jsx'
+import SvelteCounter from '../components/SvelteCounter.svelte';
+---
+
+<html lang="en">
+	<head>
+		<meta charset="utf-8" />
+		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+		<meta name="viewport" content="width=device-width" />
+		<meta name="generator" content={Astro.generator} />
+		<title>Astro</title>
+	</head>
+	<body>
+		
+		<h1>Vanilla JS</h1>
+
+		<button>+1</button>
+    <div>0</div>
+
+		<script>
+			let count = 0
+			const button = document.querySelector('button');
+			const div = document.querySelector('div');
+
+			button.addEventListener('click', event => {
+				count = count + 1;
+				div.textContent = count;
+			})			
+		</script>
+
+		<!-- 1. Write the HTML
+		2. Write the JS 
+		3. Connect the two of the together -->
+
+		<h1>React</h1>
+<!-- 
+		1. Write the HTML
+		2. Write the JS 
+		3. Connect the two of them together inside the framework file -->
+
+		<ReactCounter client:idle /> 
+
+		<h1>Svelte</h1>
+
+		<SvelteCounter client:idle/>
+
+	</body>
+</html>
